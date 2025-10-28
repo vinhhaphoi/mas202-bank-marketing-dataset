@@ -11,13 +11,7 @@ source venv/bin/activate
 pip install --upgrade pip
 
 # 5. Install required packages
-pip install pandas numpy matplotlib seaborn scipy scikit-learn
+pip install -r requirements.txt
 
-# 6. Verify installation
-pip list
-
-# 7. Run the analysis
-python analysis.py
-
-# 8. Generate report
-python report_generator.py
+# 6. Run program
+python ana.py
