@@ -52,8 +52,43 @@ class BankMarketingAnalysis:
         plt.style.use('seaborn-v0_8-darkgrid')
         sns.set_palette("husl")
         
+        # Khởi tạo mô tả biến
+        self._init_variable_descriptions()
+        
         self.setup_data()
-    
+
+    def _init_variable_descriptions(self):
+        """Khởi tạo mô tả các biến để dùng trong báo cáo và chú thích biểu đồ"""
+        # Các mô tả mẫu cho các biến thường gặp (bổ sung khi cần)
+        self.var_desc = {
+            'age': 'Tuổi của khách hàng',
+            'balance': 'Số dư tài khoản (đơn vị tiền tệ)',
+            'day': 'Ngày trong tháng khi liên hệ',
+            'duration': 'Thời lượng cuộc gọi (giây)',
+            'campaign': 'Số lần liên hệ trong chiến dịch hiện tại',
+            'pdays': 'Số ngày kể từ lần liên hệ trước (-1 nếu chưa từng liên hệ)',
+            'previous': 'Số lần liên hệ trước đó',
+            'job': 'Nghề nghiệp của khách hàng',
+            'marital': 'Tình trạng hôn nhân',
+            'deposit': 'Khách hàng gửi tiền tiết kiệm hay không (yes/no)'
+        }
+        # Thêm mô tả cho mọi cột còn lại dưới dạng chung
+        for col in self.df.columns:
+            if col not in self.var_desc:
+                self.var_desc[col] = f'Mô tả chưa có cho biến "{col}"'
+
+    def save_variable_descriptions(self):
+        """Lưu file mô tả biến (variable_descriptions.txt) vào thư mục output"""
+        filename = f'{self.output_dir}/variable_descriptions.txt'
+        lines = ["MÔ TẢ CÁC BIẾN (Tiếng Việt):", "="*60]
+        for col, desc in self.var_desc.items():
+            lines.append(f"{col}: {desc}")
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(lines))
+        self.report.append(f"\n✓ Mô tả biến được lưu vào: {filename}")
+        print(f"\n✓ Đã lưu mô tả biến: {filename}")
+        return filename
+
     def setup_data(self):
         """Chuẩn bị dữ liệu cho phân tích"""
         self.le_dict = {}
@@ -573,7 +608,6 @@ class BankMarketingAnalysis:
     def create_visualizations(self):
         """
         TÍNH NĂNG: Tạo Trực Quan Hóa
-        MÔ TẢ: Tạo tất cả các biểu đồ phân tích
         """
         print("\n" + "="*80)
         print("G) TẠO TRỰC QUAN HÓA DỮ LIỆU")
@@ -602,7 +636,12 @@ class BankMarketingAnalysis:
             ax.set_title(f'Phân phối {col}', fontsize=11, fontweight='bold')
             ax.grid(True, alpha=0.3)
         
-        plt.tight_layout()
+        # Chú thích cho cả figure: mô tả biến và mục đích
+        caption = "Ghi chú: Mỗi histogram hiển thị phân phối giá trị. " \
+                  "Mục đích: Hiểu hình dạng phân phối (lệch, đa đỉnh) và giúp phát hiện outliers."
+        fig.text(0.5, 0.02, caption, ha='center', fontsize=10)
+        
+        plt.tight_layout(rect=[0, 0.03, 1, 0.97])
         filename = f'{self.output_dir}/01_phan_phoi_bien_so.png'
         plt.savefig(filename, dpi=300, bbox_inches='tight')
         plt.close()
@@ -624,13 +663,17 @@ class BankMarketingAnalysis:
             ax.set_title(f'Boxplot: {col}', fontsize=11, fontweight='bold')
             ax.grid(True, alpha=0.3)
         
-        plt.tight_layout()
+        # Chú thích cho cả figure: mô tả biến và mục đích
+        caption = "Ghi chú: Boxplot biểu diễn median, IQR và các điểm ngoại lai. " \
+                  "Mục đích: Phát hiện outliers và so sánh phân phối theo biến."
+        fig.text(0.5, 0.01, caption, ha='center', fontsize=10)
+        plt.tight_layout(rect=[0, 0.03, 1, 0.97])
         filename = f'{self.output_dir}/02_boxplot_outliers.png'
         plt.savefig(filename, dpi=300, bbox_inches='tight')
         plt.close()
         self.visualizations.append(filename)
         print(f"   ✓ Đã lưu: {filename}")
-        
+
         # 3. Ma trận tương quan (Heatmap)
         if hasattr(self, 'df_encoded'):
             print("\n3. Đang tạo ma trận tương quan...")
@@ -642,12 +685,15 @@ class BankMarketingAnalysis:
             plt.title('MA TRẬN TƯƠNG QUAN PEARSON', fontsize=16, fontweight='bold', pad=20)
             plt.tight_layout()
             
+            caption = "Ghi chú: Heatmap hiển thị hệ số tương quan Pearson giữa các biến. " \
+                      "Mục đích: Xác định các cặp biến có tương quan mạnh (|r| > 0.5) để phân tích sâu hơn."
+            plt.gcf().text(0.5, 0.01, caption, ha='center', fontsize=10)
             filename = f'{self.output_dir}/03_ma_tran_tuong_quan.png'
             plt.savefig(filename, dpi=300, bbox_inches='tight')
             plt.close()
             self.visualizations.append(filename)
             print(f"   ✓ Đã lưu: {filename}")
-        
+
         # 4. Scatter plots cho tương quan mạnh
         print("\n4. Đang tạo scatter plots...")
         if len(numerical_cols) >= 2:
@@ -680,13 +726,17 @@ class BankMarketingAnalysis:
                 if plot_idx >= 6:
                     break
             
-            plt.tight_layout()
+            # Chú thích cho cả figure: mô tả biến và mục đích
+            caption = "Ghi chú: Scatter plot hiển thị mối quan hệ (tuyến tính/không tuyến tính) giữa hai biến. " \
+                      "Mục đích: Kiểm tra xu hướng và mật độ điểm (có thể kèm hệ số tương quan r)."
+            fig.text(0.5, 0.02, caption, ha='center', fontsize=10)
+            plt.tight_layout(rect=[0, 0.03, 1, 0.95])
             filename = f'{self.output_dir}/04_scatter_plots.png'
             plt.savefig(filename, dpi=300, bbox_inches='tight')
             plt.close()
             self.visualizations.append(filename)
             print(f"   ✓ Đã lưu: {filename}")
-        
+
         # 5. So sánh theo nhóm deposit
         if 'deposit' in self.df.columns:
             print("\n5. Đang tạo biểu đồ so sánh theo deposit...")
@@ -707,13 +757,16 @@ class BankMarketingAnalysis:
                 ax.set_title(f'{col} theo Deposit', fontsize=11, fontweight='bold')
                 ax.grid(True, alpha=0.3)
             
-            plt.tight_layout()
+            # Chú thích cho cả figure: mô tả biến và mục đích
+            caption = "Ghi chú: So sánh phân phối giữa hai nhóm Deposit (Yes/No). " \
+                      "Mục đích: Xem biến số nào khác biệt lớn giữa hai nhóm."
+            fig.text(0.5, 0.01, caption, ha='center', fontsize=10)
             filename = f'{self.output_dir}/05_so_sanh_theo_deposit.png'
             plt.savefig(filename, dpi=300, bbox_inches='tight')
             plt.close()
             self.visualizations.append(filename)
             print(f"   ✓ Đã lưu: {filename}")
-        
+
         # 6. Bar charts cho biến phân loại
         print("\n6. Đang tạo bar charts cho biến phân loại...")
         if len(categorical_cols) > 0:
@@ -758,6 +811,9 @@ class BankMarketingAnalysis:
             self.visualizations.append(filename)
             print(f"   ✓ Đã lưu: {filename}")
         
+        # Sau khi tạo xong, lưu mô tả biến
+        self.save_variable_descriptions()
+        
         print(f"\n✓ Đã tạo {len(self.visualizations)} biểu đồ")
         self.report.append(f"\n✓ Đã tạo {len(self.visualizations)} biểu đồ trong thư mục {self.output_dir}/")
         
@@ -799,6 +855,12 @@ class BankMarketingAnalysis:
             summary.append("\n📈 CÁC BIỂU ĐỒ ĐÃ TẠO:")
             for i, viz in enumerate(self.visualizations, 1):
                 summary.append(f"   {i}. {viz}")
+        
+        # Thêm file mô tả biến vào summary
+        var_desc_file = f'{self.output_dir}/variable_descriptions.txt'
+        if os.path.exists(var_desc_file):
+            summary.append("\n📝 File mô tả biến:")
+            summary.append(f"   - {var_desc_file}")
         
         summary.append("\n" + "="*80)
         summary.append("KẾT THÚC BÁO CÁO")

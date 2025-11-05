@@ -1,0 +1,521 @@
+
+================================================================================
+CHUẨN HÓA DỮ LIỆU
+================================================================================
+
+================================================================================
+TRƯỚC CHUẨN HÓA
+================================================================================
+
+Thống kê mô tả:
+                age       balance           day      duration      campaign         pdays      previous
+count  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000
+mean      41.231948   1528.538524     15.658036    371.993818      2.508421     51.330407      0.832557
+std       11.913369   3225.413326      8.420740    347.128386      2.722077    108.758282      2.292007
+min       18.000000  -6847.000000      1.000000      2.000000      1.000000     -1.000000      0.000000
+25%       32.000000    122.000000      8.000000    138.000000      1.000000     -1.000000      0.000000
+50%       39.000000    550.000000     15.000000    255.000000      2.000000     -1.000000      0.000000
+75%       49.000000   1708.000000     22.000000    496.000000      3.000000     20.750000      1.000000
+max       95.000000  81204.000000     31.000000   3881.000000     63.000000    854.000000     58.000000
+
+================================================================================
+SAU CHUẨN HÓA
+================================================================================
+
+Thống kê mô tả:
+                age       balance           day      duration      campaign         pdays      previous
+count  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04
+mean   2.749995e-16  1.018517e-17 -2.037033e-17  8.148134e-17  3.055550e-17  5.092584e-18 -2.037033e-17
+std    1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00
+min   -1.950161e+00 -2.596850e+00 -1.740784e+00 -1.065918e+00 -5.541683e-01 -4.811841e-01 -3.632598e-01
+25%   -7.749580e-01 -4.360996e-01 -9.094664e-01 -6.741146e-01 -5.541683e-01 -4.811841e-01 -3.632598e-01
+50%   -1.873565e-01 -3.033975e-01 -7.814820e-02 -3.370484e-01 -1.867854e-01 -4.811841e-01 -3.632598e-01
+75%    6.520742e-01  5.564233e-02  7.531699e-01  3.572503e-01  1.805976e-01 -2.811903e-01  7.305850e-02
+max    4.513455e+00  2.470351e+01  1.822008e+00  1.010912e+01  2.222358e+01  7.380638e+00  2.494320e+01
+
+================================================================================
+SO SÁNH CHI TIẾT
+================================================================================
+
+age:
+  Trước: Trung bình=41.2319, Độ lệch chuẩn=11.9134, Min=18.0000, Max=95.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-1.9502, Max=4.5135
+
+balance:
+  Trước: Trung bình=1528.5385, Độ lệch chuẩn=3225.4133, Min=-6847.0000, Max=81204.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-2.5968, Max=24.7035
+
+day:
+  Trước: Trung bình=15.6580, Độ lệch chuẩn=8.4207, Min=1.0000, Max=31.0000
+  Sau:   Trung bình=-0.0000, Độ lệch chuẩn=1.0000, Min=-1.7408, Max=1.8220
+
+duration:
+  Trước: Trung bình=371.9938, Độ lệch chuẩn=347.1284, Min=2.0000, Max=3881.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-1.0659, Max=10.1091
+
+campaign:
+  Trước: Trung bình=2.5084, Độ lệch chuẩn=2.7221, Min=1.0000, Max=63.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-0.5542, Max=22.2236
+
+pdays:
+  Trước: Trung bình=51.3304, Độ lệch chuẩn=108.7583, Min=-1.0000, Max=854.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-0.4812, Max=7.3806
+
+previous:
+  Trước: Trung bình=0.8326, Độ lệch chuẩn=2.2920, Min=0.0000, Max=58.0000
+  Sau:   Trung bình=-0.0000, Độ lệch chuẩn=1.0000, Min=-0.3633, Max=24.9432
+
+✓ Thông tin mã hóa biến phân loại:
+  job: 12 lớp
+    Ánh xạ: {'admin.': np.int64(0), 'blue-collar': np.int64(1), 'entrepreneur': np.int64(2), 'housemaid': np.int64(3), 'management': np.int64(4), 'retired': np.int64(5), 'self-employed': np.int64(6), 'services': np.int64(7), 'student': np.int64(8), 'technician': np.int64(9), 'unemployed': np.int64(10), 'unknown': np.int64(11)}
+  marital: 3 lớp
+    Ánh xạ: {'divorced': np.int64(0), 'married': np.int64(1), 'single': np.int64(2)}
+  education: 4 lớp
+    Ánh xạ: {'primary': np.int64(0), 'secondary': np.int64(1), 'tertiary': np.int64(2), 'unknown': np.int64(3)}
+  default: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+  housing: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+  loan: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+  contact: 3 lớp
+    Ánh xạ: {'cellular': np.int64(0), 'telephone': np.int64(1), 'unknown': np.int64(2)}
+  month: 12 lớp
+    Ánh xạ: {'apr': np.int64(0), 'aug': np.int64(1), 'dec': np.int64(2), 'feb': np.int64(3), 'jan': np.int64(4), 'jul': np.int64(5), 'jun': np.int64(6), 'mar': np.int64(7), 'may': np.int64(8), 'nov': np.int64(9), 'oct': np.int64(10), 'sep': np.int64(11)}
+  poutcome: 4 lớp
+    Ánh xạ: {'failure': np.int64(0), 'other': np.int64(1), 'success': np.int64(2), 'unknown': np.int64(3)}
+  deposit: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+
+================================================================================
+F) TỰ ĐỘNG TÌM INSIGHTS
+================================================================================
+
+1. PHÁT HIỆN OUTLIERS (Giá trị ngoại lai)
+   - age: 171 outliers (1.53%)
+   - balance: 1055 outliers (9.45%)
+   - duration: 636 outliers (5.70%)
+   - campaign: 601 outliers (5.38%)
+   - pdays: 2750 outliers (24.64%)
+   - previous: 1258 outliers (11.27%)
+
+2. CÁC TƯƠNG QUAN MẠNH NHẤT
+   - pdays ↔ poutcome: r=-0.8065 (Tương quan âm mạnh)
+   - previous ↔ poutcome: r=-0.5493 (Tương quan âm mạnh)
+   - pdays ↔ previous: r=0.5073 (Tương quan dương mạnh)
+
+3. KIỂM TRA PHÂN PHỐI CHUẨN
+   - balance: Skewness=8.2235 (lệch phải mạnh)
+   - duration: Skewness=2.1434 (lệch phải mạnh)
+   - campaign: Skewness=5.5448 (lệch phải mạnh)
+   - pdays: Skewness=2.4497 (lệch phải mạnh)
+   - previous: Skewness=7.3343 (lệch phải mạnh)
+
+4. SO SÁNH THEO NHÓM DEPOSIT
+   - balance: Nhóm Yes=1804.27, Nhóm No=1280.23 (Chênh lệch 40.9%)
+   - duration: Nhóm Yes=537.29, Nhóm No=223.13 (Chênh lệch 140.8%)
+   - campaign: Nhóm Yes=2.14, Nhóm No=2.84 (Chênh lệch 24.6%)
+   - pdays: Nhóm Yes=68.70, Nhóm No=35.69 (Chênh lệch 92.5%)
+   - previous: Nhóm Yes=1.17, Nhóm No=0.53 (Chênh lệch 121.5%)
+
+5. BIẾN ẢNH HƯỞNG MẠNH ĐẾN DEPOSIT
+   - duration: |r|=0.4519
+   - contact: |r|=0.2498
+   - housing: |r|=0.2039
+   - pdays: |r|=0.1516
+   - previous: |r|=0.1399
+
+✓ Tổng cộng phát hiện 24 insights quan trọng
+
+================================================================================
+CHUẨN HÓA DỮ LIỆU
+================================================================================
+
+================================================================================
+TRƯỚC CHUẨN HÓA
+================================================================================
+
+Thống kê mô tả:
+                age       balance           day      duration      campaign         pdays      previous
+count  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000
+mean      41.231948   1528.538524     15.658036    371.993818      2.508421     51.330407      0.832557
+std       11.913369   3225.413326      8.420740    347.128386      2.722077    108.758282      2.292007
+min       18.000000  -6847.000000      1.000000      2.000000      1.000000     -1.000000      0.000000
+25%       32.000000    122.000000      8.000000    138.000000      1.000000     -1.000000      0.000000
+50%       39.000000    550.000000     15.000000    255.000000      2.000000     -1.000000      0.000000
+75%       49.000000   1708.000000     22.000000    496.000000      3.000000     20.750000      1.000000
+max       95.000000  81204.000000     31.000000   3881.000000     63.000000    854.000000     58.000000
+
+================================================================================
+SAU CHUẨN HÓA
+================================================================================
+
+Thống kê mô tả:
+                age       balance           day      duration      campaign         pdays      previous
+count  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04  1.116200e+04
+mean   2.749995e-16  1.018517e-17 -2.037033e-17  8.148134e-17  3.055550e-17  5.092584e-18 -2.037033e-17
+std    1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00  1.000045e+00
+min   -1.950161e+00 -2.596850e+00 -1.740784e+00 -1.065918e+00 -5.541683e-01 -4.811841e-01 -3.632598e-01
+25%   -7.749580e-01 -4.360996e-01 -9.094664e-01 -6.741146e-01 -5.541683e-01 -4.811841e-01 -3.632598e-01
+50%   -1.873565e-01 -3.033975e-01 -7.814820e-02 -3.370484e-01 -1.867854e-01 -4.811841e-01 -3.632598e-01
+75%    6.520742e-01  5.564233e-02  7.531699e-01  3.572503e-01  1.805976e-01 -2.811903e-01  7.305850e-02
+max    4.513455e+00  2.470351e+01  1.822008e+00  1.010912e+01  2.222358e+01  7.380638e+00  2.494320e+01
+
+================================================================================
+SO SÁNH CHI TIẾT
+================================================================================
+
+age:
+  Trước: Trung bình=41.2319, Độ lệch chuẩn=11.9134, Min=18.0000, Max=95.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-1.9502, Max=4.5135
+
+balance:
+  Trước: Trung bình=1528.5385, Độ lệch chuẩn=3225.4133, Min=-6847.0000, Max=81204.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-2.5968, Max=24.7035
+
+day:
+  Trước: Trung bình=15.6580, Độ lệch chuẩn=8.4207, Min=1.0000, Max=31.0000
+  Sau:   Trung bình=-0.0000, Độ lệch chuẩn=1.0000, Min=-1.7408, Max=1.8220
+
+duration:
+  Trước: Trung bình=371.9938, Độ lệch chuẩn=347.1284, Min=2.0000, Max=3881.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-1.0659, Max=10.1091
+
+campaign:
+  Trước: Trung bình=2.5084, Độ lệch chuẩn=2.7221, Min=1.0000, Max=63.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-0.5542, Max=22.2236
+
+pdays:
+  Trước: Trung bình=51.3304, Độ lệch chuẩn=108.7583, Min=-1.0000, Max=854.0000
+  Sau:   Trung bình=0.0000, Độ lệch chuẩn=1.0000, Min=-0.4812, Max=7.3806
+
+previous:
+  Trước: Trung bình=0.8326, Độ lệch chuẩn=2.2920, Min=0.0000, Max=58.0000
+  Sau:   Trung bình=-0.0000, Độ lệch chuẩn=1.0000, Min=-0.3633, Max=24.9432
+
+✓ Thông tin mã hóa biến phân loại:
+  job: 12 lớp
+    Ánh xạ: {'admin.': np.int64(0), 'blue-collar': np.int64(1), 'entrepreneur': np.int64(2), 'housemaid': np.int64(3), 'management': np.int64(4), 'retired': np.int64(5), 'self-employed': np.int64(6), 'services': np.int64(7), 'student': np.int64(8), 'technician': np.int64(9), 'unemployed': np.int64(10), 'unknown': np.int64(11)}
+  marital: 3 lớp
+    Ánh xạ: {'divorced': np.int64(0), 'married': np.int64(1), 'single': np.int64(2)}
+  education: 4 lớp
+    Ánh xạ: {'primary': np.int64(0), 'secondary': np.int64(1), 'tertiary': np.int64(2), 'unknown': np.int64(3)}
+  default: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+  housing: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+  loan: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+  contact: 3 lớp
+    Ánh xạ: {'cellular': np.int64(0), 'telephone': np.int64(1), 'unknown': np.int64(2)}
+  month: 12 lớp
+    Ánh xạ: {'apr': np.int64(0), 'aug': np.int64(1), 'dec': np.int64(2), 'feb': np.int64(3), 'jan': np.int64(4), 'jul': np.int64(5), 'jun': np.int64(6), 'mar': np.int64(7), 'may': np.int64(8), 'nov': np.int64(9), 'oct': np.int64(10), 'sep': np.int64(11)}
+  poutcome: 4 lớp
+    Ánh xạ: {'failure': np.int64(0), 'other': np.int64(1), 'success': np.int64(2), 'unknown': np.int64(3)}
+  deposit: 2 lớp
+    Ánh xạ: {'no': np.int64(0), 'yes': np.int64(1)}
+
+================================================================================
+A) PHÂN TÍCH THỐNG KÊ MÔ TẢ
+================================================================================
+
+1. THÔNG TIN CƠ BẢN
+   - Số dòng: 11162
+   - Số cột: 17
+
+2. KIỂU DỮ LIỆU
+age           int64
+job          object
+marital      object
+education    object
+default      object
+balance       int64
+housing      object
+loan         object
+contact      object
+day           int64
+month        object
+duration      int64
+campaign      int64
+pdays         int64
+previous      int64
+poutcome     object
+deposit      object
+dtype: object
+
+3. KIỂM TRA GIÁ TRỊ THIẾU
+   - Không phát hiện giá trị thiếu
+
+4. THỐNG KÊ BIẾN ĐỊNH LƯỢNG
+
+Tổng số biến định lượng: 7
+Danh sách biến: ['age', 'balance', 'day', 'duration', 'campaign', 'pdays', 'previous']
+
+                age       balance           day      duration      campaign         pdays      previous
+count  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000  11162.000000
+mean      41.231948   1528.538524     15.658036    371.993818      2.508421     51.330407      0.832557
+std       11.913369   3225.413326      8.420740    347.128386      2.722077    108.758282      2.292007
+min       18.000000  -6847.000000      1.000000      2.000000      1.000000     -1.000000      0.000000
+25%       32.000000    122.000000      8.000000    138.000000      1.000000     -1.000000      0.000000
+50%       39.000000    550.000000     15.000000    255.000000      2.000000     -1.000000      0.000000
+75%       49.000000   1708.000000     22.000000    496.000000      3.000000     20.750000      1.000000
+max       95.000000  81204.000000     31.000000   3881.000000     63.000000    854.000000     58.000000
+
+5. THỐNG KÊ BIẾN ĐỊNH TÍNH
+
+   job:
+job
+management       2566
+blue-collar      1944
+technician       1823
+admin.           1334
+services          923
+retired           778
+self-employed     405
+student           360
+unemployed        357
+entrepreneur      328
+housemaid         274
+unknown            70
+Name: count, dtype: int64
+
+   marital:
+marital
+married     6351
+single      3518
+divorced    1293
+Name: count, dtype: int64
+
+   education:
+education
+secondary    5476
+tertiary     3689
+primary      1500
+unknown       497
+Name: count, dtype: int64
+
+   default:
+default
+no     10994
+yes      168
+Name: count, dtype: int64
+
+   housing:
+housing
+no     5881
+yes    5281
+Name: count, dtype: int64
+
+   loan:
+loan
+no     9702
+yes    1460
+Name: count, dtype: int64
+
+   contact:
+contact
+cellular     8042
+unknown      2346
+telephone     774
+Name: count, dtype: int64
+
+   month:
+month
+may    2824
+aug    1519
+jul    1514
+jun    1222
+nov     943
+apr     923
+feb     776
+oct     392
+jan     344
+sep     319
+mar     276
+dec     110
+Name: count, dtype: int64
+
+   poutcome:
+poutcome
+unknown    8326
+failure    1228
+success    1071
+other       537
+Name: count, dtype: int64
+
+   deposit:
+deposit
+no     5873
+yes    5289
+Name: count, dtype: int64
+
+================================================================================
+B) ƯỚC LƯỢNG VÀ KIỂM ĐỊNH GIẢ THUYẾT
+================================================================================
+
+1. KHOẢNG TIN CẬY 95% CHO TRUNG BÌNH
+
+   age: Trung bình=41.2319, Khoảng tin cậy=[41.0109, 41.4530]
+
+   balance: Trung bình=1528.5385, Khoảng tin cậy=[1468.6960, 1588.3810]
+
+   day: Trung bình=15.6580, Khoảng tin cậy=[15.5018, 15.8143]
+
+   duration: Trung bình=371.9938, Khoảng tin cậy=[365.5534, 378.4342]
+
+   campaign: Trung bình=2.5084, Khoảng tin cậy=[2.4579, 2.5589]
+
+   pdays: Trung bình=51.3304, Khoảng tin cậy=[49.3126, 53.3482]
+
+   previous: Trung bình=0.8326, Khoảng tin cậy=[0.7900, 0.8751]
+
+2. KIỂM ĐỊNH T: TUỔI THEO TRẠNG THÁI GỬI TIỀN
+   Thống kê T=3.6892, Giá trị P=0.000226
+
+3. KIỂM ĐỊNH CHI-BÌNH PHƯƠNG: CÔNG VIỆC vs GỬI TIỀN
+   Chi-bình phương=378.0753, Giá trị P=0.000000
+
+================================================================================
+C) PHÂN TÍCH TƯƠNG QUAN
+================================================================================
+
+1. MA TRẬN TƯƠNG QUAN PEARSON
+
+                age       job   marital  education   default   balance   housing      loan   contact       day     month  duration  campaign     pdays  previous  poutcome   deposit
+age        1.000000 -0.031603 -0.442782  -0.126018 -0.011425  0.112300 -0.168700 -0.031418  0.027762 -0.000762 -0.026130  0.000189 -0.005278  0.002774  0.020169 -0.002699  0.034901
+job       -0.031603  1.000000  0.078314   0.147046 -0.007066  0.028736 -0.136965 -0.067092 -0.087915  0.026589 -0.076011  0.002432  0.003104 -0.003385  0.012665 -0.004238  0.063395
+marital   -0.442782  0.078314  1.000000   0.125845 -0.014691 -0.002138 -0.036345 -0.062029 -0.060456 -0.003642 -0.004070  0.006781 -0.030794  0.031200  0.031281 -0.039424  0.067610
+education -0.126018  0.147046  0.125845   1.000000 -0.010709  0.051728 -0.109168 -0.073154 -0.132540  0.016759 -0.055868 -0.019122 -0.005327  0.025165  0.022427 -0.040262  0.095948
+default   -0.011425 -0.007066 -0.014691  -0.010709  1.000000 -0.060954  0.011076  0.076434  0.035709  0.017342  0.000950 -0.009760  0.030975 -0.036282 -0.035273  0.042357 -0.040680
+balance    0.112300  0.028736 -0.002138   0.051728 -0.060954  1.000000 -0.077092 -0.084589 -0.027295  0.010467  0.007264  0.022436 -0.013894  0.017411  0.030805 -0.027151  0.081129
+housing   -0.168700 -0.136965 -0.036345  -0.109168  0.011076 -0.077092  1.000000  0.076761  0.226392 -0.014770  0.219602  0.035051  0.006660  0.064497 -0.000840 -0.046370 -0.203888
+loan      -0.031418 -0.067092 -0.062029  -0.073154  0.076434 -0.084589  0.076761  1.000000  0.006829  0.017269  0.025329 -0.001914  0.034722 -0.030416 -0.022668  0.026344 -0.110580
+contact    0.027762 -0.087915 -0.060456  -0.132540  0.035709 -0.027295  0.226392  0.006829  1.000000  0.007943  0.289803 -0.018000  0.059258 -0.227785 -0.169919  0.257993 -0.249847
+day       -0.000762  0.026589 -0.003642   0.016759  0.017342  0.010467 -0.014770  0.017269  0.007943  1.000000 -0.019840 -0.018511  0.137007 -0.077232 -0.058981  0.080221 -0.056326
+month     -0.026130 -0.076011 -0.004070  -0.055868  0.000950  0.007264  0.219602  0.025329  0.289803 -0.019840  1.000000 -0.006482 -0.098123  0.033631  0.029283 -0.042456 -0.037121
+duration   0.000189  0.002432  0.006781  -0.019122 -0.009760  0.022436  0.035051 -0.001914 -0.018000 -0.018511 -0.006482  1.000000 -0.041557 -0.027392 -0.026716  0.042171  0.451919
+campaign  -0.005278  0.003104 -0.030794  -0.005327  0.030975 -0.013894  0.006660  0.034722  0.059258  0.137007 -0.098123 -0.041557  1.000000 -0.102726 -0.049699  0.112127 -0.128081
+pdays      0.002774 -0.003385  0.031200   0.025165 -0.036282  0.017411  0.064497 -0.030416 -0.227785 -0.077232  0.033631 -0.027392 -0.102726  1.000000  0.507272 -0.806533  0.151593
+previous   0.020169  0.012665  0.031281   0.022427 -0.035273  0.030805 -0.000840 -0.022668 -0.169919 -0.058981  0.029283 -0.026716 -0.049699  0.507272  1.000000 -0.549333  0.139867
+poutcome  -0.002699 -0.004238 -0.039424  -0.040262  0.042357 -0.027151 -0.046370  0.026344  0.257993  0.080221 -0.042456  0.042171  0.112127 -0.806533 -0.549333  1.000000 -0.122369
+deposit    0.034901  0.063395  0.067610   0.095948 -0.040680  0.081129 -0.203888 -0.110580 -0.249847 -0.056326 -0.037121  0.451919 -0.128081  0.151593  0.139867 -0.122369  1.000000
+
+2. TƯƠNG QUAN VỚI BIẾN MỤC TIÊU (GỬI TIỀN)
+
+deposit      1.000000
+duration     0.451919
+pdays        0.151593
+previous     0.139867
+education    0.095948
+balance      0.081129
+marital      0.067610
+job          0.063395
+age          0.034901
+month       -0.037121
+default     -0.040680
+day         -0.056326
+loan        -0.110580
+poutcome    -0.122369
+campaign    -0.128081
+housing     -0.203888
+contact     -0.249847
+Name: deposit, dtype: float64
+
+3. TƯƠNG QUAN HẠNG SPEARMAN: TUỔI vs SỐ DƯ
+   Hệ số tương quan: 0.1060, Giá trị P=0.000000
+
+================================================================================
+D) PHÂN TÍCH ANOVA
+================================================================================
+
+1. ANOVA MỘT CHIỀU: TUỔI THEO LOẠI CÔNG VIỆC
+   Thống kê F=590.6198, Giá trị P=0.000000
+
+   Trung bình tuổi theo loại công việc:
+
+job
+retired          65.424165
+housemaid        47.445255
+unknown          46.857143
+entrepreneur     42.887195
+unemployed       40.997199
+management       40.218239
+self-employed    39.809877
+blue-collar      39.505144
+admin.           39.374063
+technician       39.001646
+services         38.141928
+student          26.102778
+Name: age, dtype: float64
+
+2. ANOVA MỘT CHIỀU: SỐ DƯ THEO TÌNH TRẠNG HÔN NHÂN
+   Thống kê F=3.9429, Giá trị P=0.019420
+
+================================================================================
+E) PHÂN TÍCH HỒI QUY
+================================================================================
+
+1. HỒI QUY TUYẾN TÍNH ĐƠN: SỐ DƯ vs TUỔI
+   Hệ số chặn=274.9242
+   Hệ số=30.4040
+   R bình phương=0.0126
+
+2. HỒI QUY TUYẾN TÍNH ĐA BIẾN
+   Biến độc lập: ['age', 'day', 'duration', 'campaign', 'pdays']
+   Hệ số chặn: 124.1446
+   R bình phương: 0.0137
+
+================================================================================
+F) TỰ ĐỘNG TÌM INSIGHTS
+================================================================================
+
+1. PHÁT HIỆN OUTLIERS (Giá trị ngoại lai)
+   - age: 171 outliers (1.53%)
+   - balance: 1055 outliers (9.45%)
+   - duration: 636 outliers (5.70%)
+   - campaign: 601 outliers (5.38%)
+   - pdays: 2750 outliers (24.64%)
+   - previous: 1258 outliers (11.27%)
+
+2. CÁC TƯƠNG QUAN MẠNH NHẤT
+   - pdays ↔ poutcome: r=-0.8065 (Tương quan âm mạnh)
+   - previous ↔ poutcome: r=-0.5493 (Tương quan âm mạnh)
+   - pdays ↔ previous: r=0.5073 (Tương quan dương mạnh)
+
+3. KIỂM TRA PHÂN PHỐI CHUẨN
+   - balance: Skewness=8.2235 (lệch phải mạnh)
+   - duration: Skewness=2.1434 (lệch phải mạnh)
+   - campaign: Skewness=5.5448 (lệch phải mạnh)
+   - pdays: Skewness=2.4497 (lệch phải mạnh)
+   - previous: Skewness=7.3343 (lệch phải mạnh)
+
+4. SO SÁNH THEO NHÓM DEPOSIT
+   - balance: Nhóm Yes=1804.27, Nhóm No=1280.23 (Chênh lệch 40.9%)
+   - duration: Nhóm Yes=537.29, Nhóm No=223.13 (Chênh lệch 140.8%)
+   - campaign: Nhóm Yes=2.14, Nhóm No=2.84 (Chênh lệch 24.6%)
+   - pdays: Nhóm Yes=68.70, Nhóm No=35.69 (Chênh lệch 92.5%)
+   - previous: Nhóm Yes=1.17, Nhóm No=0.53 (Chênh lệch 121.5%)
+
+5. BIẾN ẢNH HƯỞNG MẠNH ĐẾN DEPOSIT
+   - duration: |r|=0.4519
+   - contact: |r|=0.2498
+   - housing: |r|=0.2039
+   - pdays: |r|=0.1516
+   - previous: |r|=0.1399
+
+✓ Tổng cộng phát hiện 24 insights quan trọng
+
+================================================================================
+G) TẠO TRỰC QUAN HÓA DỮ LIỆU
+================================================================================
+
+✓ Mô tả biến được lưu vào: analysis_output/variable_descriptions.txt
+
+✓ Đã tạo 7 biểu đồ trong thư mục analysis_output/
+   - analysis_output/01_phan_phoi_bien_so.png
+   - analysis_output/02_boxplot_outliers.png
+   - analysis_output/03_ma_tran_tuong_quan.png
+   - analysis_output/04_scatter_plots.png
+   - analysis_output/05_so_sanh_theo_deposit.png
+   - analysis_output/06_phan_phoi_bien_phan_loai.png
+   - analysis_output/07_pairplot.png

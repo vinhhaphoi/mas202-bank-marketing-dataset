@@ -1,0 +1,19 @@
+MÔ TẢ CÁC BIẾN (Tiếng Việt):
+============================================================
+age: Tuổi của khách hàng
+balance: Số dư tài khoản (đơn vị tiền tệ)
+day: Ngày trong tháng khi liên hệ
+duration: Thời lượng cuộc gọi (giây)
+campaign: Số lần liên hệ trong chiến dịch hiện tại
+pdays: Số ngày kể từ lần liên hệ trước (-1 nếu chưa từng liên hệ)
+previous: Số lần liên hệ trước đó
+job: Nghề nghiệp của khách hàng
+marital: Tình trạng hôn nhân
+deposit: Khách hàng gửi tiền tiết kiệm hay không (yes/no)
+education: Mô tả chưa có cho biến "education"
+default: Mô tả chưa có cho biến "default"
+housing: Mô tả chưa có cho biến "housing"
+loan: Mô tả chưa có cho biến "loan"
+contact: Mô tả chưa có cho biến "contact"
+month: Mô tả chưa có cho biến "month"
+poutcome: Mô tả chưa có cho biến "poutcome"

@@ -1,0 +1,58 @@
+================================================================================
+BÁO CÁO PHÂN TÍCH TỔNG HỢP
+Ngày tạo: 05/11/2025 08:48:53
+================================================================================
+
+📊 CÁC PHÂN TÍCH ĐÃ THỰC HIỆN:
+   1. Chuẩn Hóa Dữ Liệu
+   2. Tự Động Tìm Insights
+   3. Chuẩn Hóa Dữ Liệu
+   4. Phân Tích Thống Kê Mô Tả
+   5. Ước Lượng & Kiểm Định Giả Thuyết
+   6. Phân Tích Tương Quan
+   7. Phân Tích ANOVA
+   8. Phân Tích Hồi Quy
+   9. Tự Động Tìm Insights
+   10. Tạo Trực Quan Hóa
+
+💡 CÁC INSIGHTS QUAN TRỌNG:
+   1. Phát hiện 171 outliers trong age
+   2. Phát hiện 1055 outliers trong balance
+   3. Phát hiện 636 outliers trong duration
+   4. Phát hiện 601 outliers trong campaign
+   5. Phát hiện 2750 outliers trong pdays
+   6. Phát hiện 1258 outliers trong previous
+   7. Tương quan mạnh giữa pdays và poutcome: -0.8065
+   8. Tương quan mạnh giữa previous và poutcome: -0.5493
+   9. Tương quan mạnh giữa pdays và previous: 0.5073
+   10. balance có phân phối lệch phải
+   11. duration có phân phối lệch phải
+   12. campaign có phân phối lệch phải
+   13. pdays có phân phối lệch phải
+   14. previous có phân phối lệch phải
+   15. Chênh lệch lớn về balance giữa 2 nhóm deposit
+   16. Chênh lệch lớn về duration giữa 2 nhóm deposit
+   17. Chênh lệch lớn về campaign giữa 2 nhóm deposit
+   18. Chênh lệch lớn về pdays giữa 2 nhóm deposit
+   19. Chênh lệch lớn về previous giữa 2 nhóm deposit
+   20. duration có ảnh hưởng mạnh đến deposit
+   21. contact có ảnh hưởng mạnh đến deposit
+   22. housing có ảnh hưởng mạnh đến deposit
+   23. pdays có ảnh hưởng mạnh đến deposit
+   24. previous có ảnh hưởng mạnh đến deposit
+
+📈 CÁC BIỂU ĐỒ ĐÃ TẠO:
+   1. analysis_output/01_phan_phoi_bien_so.png
+   2. analysis_output/02_boxplot_outliers.png
+   3. analysis_output/03_ma_tran_tuong_quan.png
+   4. analysis_output/04_scatter_plots.png
+   5. analysis_output/05_so_sanh_theo_deposit.png
+   6. analysis_output/06_phan_phoi_bien_phan_loai.png
+   7. analysis_output/07_pairplot.png
+
+📝 File mô tả biến:
+   - analysis_output/variable_descriptions.txt
+
+================================================================================
+KẾT THÚC BÁO CÁO
+================================================================================
